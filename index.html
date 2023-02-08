@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            height: 100vh;
+            margin-top: -8rem;
+        }
+
+        .main,
+        .image,
+        .first,
+        .second {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+
+        .second {
+            margin-top: 10rem;
+            display: none;
+        }
+
+        .image img {
+            width: 14rem;
+        }
+
+        .image .txt {
+            margin: 1rem 0;
+            font-size: 2rem;
+        }
+
+        .btns {
+            margin-top: 2rem;
+        }
+
+        button {
+            width: 3rem;
+            margin: 1rem;
+        }
+
+        #no {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="first" id="first">
+            <div class="image">
+                <img src="please.gif" alt="" width="">
+                <div class="txt">
+                    Will you marry me?
+                </div>
+            </div>
+            <div class="btns">
+                <button id="no">No</button>
+                <button id="yes">Yes</button>
+            </div>
+        </div>
+        <div class="second" id="second">
+            <div class="image">
+                <img src="thankyou.gif" alt="" width="">
+                <div class="txt">
+                    Yayyyyyyyyyyyyyyyyy
+                </div>
+            </div>
+            <div class="image">
+                <img src="hug.gif" alt="" width="">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let no = document.getElementById('no')
+        let yes = document.getElementById('yes')
+        let p = 1;
+
+        no.addEventListener('click', () => {
+            if (p == 1) {
+                no.style.top = "8rem"
+                p = 2
+            } else if (p == 2) {
+                no.style.top = "3rem"
+                no.style.left = "8rem"
+                p = 3
+            } else if (p == 3) {
+                no.style.top = "-3rem"
+                no.style.left = "-2rem"
+                p = 4
+            } else if (p == 4) {
+                no.style.top = "-3rem"
+                no.style.left = "5rem"
+                p = 5
+            } else if (p == 5) {
+                no.style.top = "8rem"
+                no.style.right = "5rem"
+                p = 6
+            } else if (p == 6) {
+                no.style.top = "-5rem"
+                no.style.right = "-5rem"
+                p = 7
+            } else if (p == 7) {
+                no.style.top = "13rem"
+                no.style.left = "-7rem"
+                p = 8
+            } else if (p == 8) {
+                no.style.top = "13rem"
+                no.style.left = "9rem"
+                p = 9
+            } else if (p == 9) {
+                no.style.top = "0"
+                no.style.left = "0"
+                no.style.right = "0"
+                p = 1
+            }
+        })
+
+        yes.addEventListener('click', () => {
+            document.getElementById('first').style.display = "none"
+            document.getElementById('second').style.display = "flex"
+        })
+    </script>
+</body>
+
+</html>
